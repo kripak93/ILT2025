@@ -212,7 +212,9 @@ else:
         else:
             comparison_years = None
     else:
-        comparison_years = Nonealysis_mode = st.sidebar.selectbox(
+        comparison_years = None
+
+analysis_mode = st.sidebar.selectbox(
     "📊 Analysis Mode:", 
     ["Team Strategy Overview", "Player Performance Analysis", "Opposition Analysis", "Match Preparation", "AI Insights"]
 )
