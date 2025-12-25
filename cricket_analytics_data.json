@@ -1,0 +1,43 @@
+{
+  "teams": {},
+  "matchups": {
+    "ADKR_general_Post PP": {
+      "type": "bowl_type",
+      "data": [
+        {
+          "Player": "A Sharafu",
+          "BowlType": "pace",
+          "Span": "2024-2025",
+          "Mat": 16,
+          "Inns": 16,
+          "Ave kph": 125.49,
+          "Max kph": 146.22,
+          "Min kph": 71.34,
+          "Rel\u02b8av": -0.122,
+          "Rel\u1dbbav": 1.978,
+          "Bnce\u02e3av": 6.909,
+          "Bnce\u02b8av": -0.201,
+          "Impt\u02e3av": 1.847,
+          "Impt\u02b8av": -0.19,
+          "Impt\u1dbbav": 0.711,
+          "InterAv": 4.915,
+          "Stmp\u02b8av": -0.207,
+          "Stmp\u1dbbav": 0.853,
+          "Ave Swg": 0.522,
+          "Swg\u2220mx": -2.176,
+          "Ave Dev": 0.604,
+          "DevMx": 3.503,
+          "Runs": 187,
+          "BF": 138,
+          "RR": 8.13,
+          "SR": 135.5,
+          "Wks": 3,
+          "Ave": 62.33,
+          "DR": 46.0,
+          "Dot%": 28.9,
+          "Bnd%": 18.84
+        }
+      ]
+    }
+  }
+}
