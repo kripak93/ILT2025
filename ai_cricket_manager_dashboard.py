@@ -87,10 +87,17 @@ st.markdown("""
 # Initialize Gemini AI
 @st.cache_resource
 def initialize_ai():
-    """Initialize Gemini AI"""
+    """Initialize Gemini AI - Only called when needed"""
     api_key = os.getenv('GEMINI_API_KEY')
     if not api_key:
-        st.error("🔑 Gemini API key not found in .env file")
+        # Try Streamlit secrets as fallback
+        try:
+            api_key = st.secrets.get('GEMINI_API_KEY')
+        except:
+            pass
+    
+    if not api_key:
+        st.error("🔑 Gemini API key not found. Please add it in Streamlit Cloud Secrets or .env file")
         return None
     
     try:
@@ -101,7 +108,7 @@ def initialize_ai():
         st.error(f"❌ Failed to initialize AI: {e}")
         return None
 
-ai_model = initialize_ai()
+# Don't initialize AI immediately - only when button is clicked
 
 @st.cache_data
 def load_cricket_data():
@@ -252,6 +259,9 @@ def get_team_data(team_code, year_filter=None):
 
 def generate_ai_insight(prompt, data_context, detailed_stats=None):
     """Generate AI insights using Gemini with actual cricket data"""
+    # Initialize AI model lazily when actually needed
+    ai_model = initialize_ai()
+    
     if not ai_model:
         return "AI analysis unavailable - API key not configured"
     
